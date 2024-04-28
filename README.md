@@ -10,7 +10,7 @@ Welcome to the Ultimate Assistant Manager! This project is designed to help you 
 
 ## Getting Started
 
-To get started, simply clone this repository and run the `main.py` file. You'll be able to add, remove, and update assistants in no time!
+To get started, simply clone this repository and run the `flask run` command. You'll be able to add, remove, and update assistants in no time!
 
 ## Example Usage
 
