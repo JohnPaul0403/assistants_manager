@@ -40,9 +40,9 @@ The Ultimate Assistant Manager is released under the MIT License.
 
 ## Credits
 
-The Ultimate Assistant Manager was created by [Your Name]. Special thanks to the following people for their contributions:
+The Ultimate Assistant Manager was created by John Paul Paredes. Special thanks to the following people for their contributions:
 
-[Contributor 1]
+[My Profile](https://github.com/JohnPaul0403)
 
 ------
 
