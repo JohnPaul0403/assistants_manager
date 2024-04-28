@@ -1,0 +1,68 @@
+{% include "partials/head.html" %}
+<body>
+
+    {% include "partials/navbar.html" %}
+
+    <article>
+        <main class="container mt-4">
+            <div class="row">
+            <div class="col-md-6">
+                <h2 class="mt4 mb-4">Profile Details</h2>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center" style="font-size: large">
+                        Name:
+                        <span class="badge bg-primary rounded-pill" style="font-size: large; padding: 10px; color: aliceblue;">{{ user.name }}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center" style="font-size: large">
+                        Email:
+                        <span class="badge bg-primary rounded-pill" style="font-size: large; padding: 10px; color: aliceblue;">{{ user.email }}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center" style="font-size: large">
+                        Plan:
+                        {% if user.pro_plan == 0 %}
+                        <span class="badge bg-secondary rounded-pill" style="font-size: large; padding: 10px; color: aliceblue;">Free</span>
+                        {% else %}
+                        <span class="badge bg-primary rounded-pill" style="font-size: large; padding: 10px; color: aliceblue;">Premium</span>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h2 class="mt4 mb-4">Update Profile</h2>
+                {% include "partials/flashes.html" %}
+                <form action="{{ url_for('main.change_data') }}" method="post" class="row g-3">
+                <div class="col-md-6 mt4 mb-4">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{ user.name }}">
+                </div>
+                <div class="col-md-6 mt4 mb-4">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}">
+                </div>
+                <div class="col-12 mt4">
+                    <button type="submit" class="btn btn-primary mt4 mb-4">Update</button>
+                </div>
+                </form>
+                <h2>Change Password</h2>
+                <form action="{{ url_for('main.change_password') }}" method="post" class="row g-3">
+                <div class="col-md-6 mt4 mb-4">
+                    <label for="old_password" class="form-label">Old Password:</label>
+                    <input type="password" class="form-control" id="old_password" name="old_password" required>
+                </div>
+                <div class="col-md-6 mt4 mb-4">
+                    <label for="new_password" class="form-label">New Password:</label>
+                    <input type="password" class="form-control" id="new_password" name="new_password" required>
+                </div>
+                <div class="col-12 mt4 ">
+                    <button type="submit" class="btn btn-warning mt4 mb-4">Change Password</button>
+                </div>
+                </form>
+            </div>
+            </div>
+        </main>
+    </article>
+
+    {% include "partials/footer.html" %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
